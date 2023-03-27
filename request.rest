@@ -1,4 +1,4 @@
-POST http://localhost:8000/authenticate
+POST https://chat-e3fi.onrender.comauthenticate
 Content-Type: application/json
 
 {"username": "nico"}
