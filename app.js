@@ -1,13 +1,15 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import "dotenv/config.js"   //configuracion del archivo .env
+import express from "express"
+import path from "path" 
+import cookieParser from "cookie-parser" 
+import logger from "morgan" 
+import indexRouter from './routes/index.js'  
+import usersRouter from './routes/users.js'
+import { __dirname } from "./utils.js"  
+import './config/database.js'    
+import cors from 'cors'
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,4 +40,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+export default app
